@@ -4,6 +4,13 @@ import streamlit as st
 # CONFIGURAÇÃO DA PAGINA
 st.set_page_config(page_title = "Data Science Portfolio", page_icon = "📊", layout = "wide")
 
+st.html("""
+    <style>
+
+    </style>
+"""
+)
+
 # SEÇÃO HERO
 #  DIVIDINDO A TELA EM 2 COLUNAS
 col1, col2 = st.columns([2,1])
@@ -11,11 +18,11 @@ col1, col2 = st.columns([2,1])
 # PREENCHENDO A COLUNA 1
 with col1:
     # TITULOS
-    st.title("DATA SCIENCE")
-    st.title("PORTIFOLIO")
+    st.title("CIÊNCIA DE DADOS")
+    
     # LEGENDAS
-    st.write("Machine learning * Data Analysis * Forecasting")
-    st.write("Explorando problemas de negócio através de dados, " "Modelos estatísticos e Machine Learning")
+    st.write("Machine learning • Data Analysis • Statis")
+    st.write("Projetos de Ciência de Dados voltados à análise, ""modelagem e compreensão de problemas do setor financeiro.")
 
     # CRIANDO OS BOTÕES E DEFININDO AS POSIÇÕES COM COLUNAS
     botao1, botao2, botao3= st.columns([1,1,5])
@@ -26,9 +33,19 @@ with col1:
     # TEXTO DO BOTÃO 2
     with botao2:
         st.button("Github")
+
 # COLUNA 2 DA PAGINA
 with col2:
-    st.write("VISUAL")
+    st.html("""
+        <svg width="200" height="200">
+            <circle
+                cx="100"
+                cy="100"
+                r="30"
+                fill="#149685"
+            />
+        </svg>
+    """)
 
 # DIVIDINDO A SEÇÃO HERO
 st.divider()
