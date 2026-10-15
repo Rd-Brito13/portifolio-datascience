@@ -1,4 +1,6 @@
 import streamlit as st
+import base64
+from pathlib import Path
 
 # --------------------------------------------------------------------
 # CONFIGURAÇÃO DA PAGINA
@@ -111,98 +113,64 @@ st.html("""
 
 # --------------------------------------------------------
 # SEÇÃO PROJETOS EM DESTAQUE
-st.header("Projetos em Destaque")
- 
+def img_base64(caminho):
+    return base64.b64encode(Path(caminho).read_bytes()).decode()
 
-# CRIANDO AS COLUNAS PARA A DESCRIÇÃO DO CARD DO PROJETO E A IMAGEM UTILIZADA
-col6, col7 = st.columns([2,1])
 
-# FORMATAÇÃO HTML PARA O CARD 6 E AS LEGENDAS
-with col6:
-    st.html("""
-    <div class="project-card">
-        <h3>CREDIT RISK</h3>
+grafico = img_base64("assets/credit-risk/compracao_modelos.png")
 
-        <p class="project-tags">
-            Classificação • Bancário • Machine Learning
-        </p>
+projetos = [
+    {"nome": "PROJETO 2", "badges":["Regressão","Varejo"],"descricao": "Breve descrição do problema abordado e da técnica utilizada."},
+    {"nome":"PROJETO 3","badges":["Regressão","Varejo"],"descricao":"Descrição Breve do segundo projeto."},
+    {"nome": "PROJETO 4", "badges":["Regressão","Varejo"],"descricao": "Descrição breve do terceiro projeto."},
+    {"nome": "PROJETO 5", "badges":["Regressão","Varejo"],"descricao": "Descrição breve do quarto projeto."},
+    {"nome": "PROJETO 6", "badges":["Regressão","Varejo"],"descricao": "Descrição breve do quinto projeto."}
+]
 
-        <p>
-        Projeto de Machine Learning voltado à previsão de indimplência no contexto de risco de crédito.
-        A solução utiliza dados financeiros, demográficos e comportamentais para identificar clientes com
-        maior probabilidade de default, passando por análise exploratória, 
-        engenharia de variáveis, tratamento do desbalanceamento e comparação de diferentes modelos preditivos.
-        </p>
-        <p class = "project-tech">
-        Python • Pandas • Numpy • Scikit-learn • XGBoost • Matplotlib • Seaborn
-        </p>
+def montar_card(p):
+    badges = " • ".join(p["badges"])
+    return f"""
+    <div class="project-selector">
+        <span class="tag">{p['nome']}</span>
+        <p class="project-tags">{badges}</p>
+        <div class="project-tooltip">{p['descricao']}</div>
     </div>
-    """)
+    """
 
-# IMPLEMENTAÇÃO DA IMAGEN PARA COMPARAÇÃO DOS MODELOS
-with col7:
-    st.image(
-        "assets/credit-risk/compracao_modelos.png"
-    )
+cards = "".join(montar_card(p) for p in projetos)
 
-
-# RESPONSAVEL POR CRIAR O CONTEINER, A DIV ONDE FICA O SPAN COM O TEXTO DENTRO DO CONTAINER E A DESCRIÇÃO DO TOOLTIP
 st.html(
-    """
-<div class = "project-selector-container">
-    <div class = "project-selector">
-        <span>PROJECT 1</span>
+f"""
+<section class = "secao-destaque">
+    <h2>Projetos em Destaque</h2>
+    <div class ="destaque-grid">
 
-        <div class = "project-tooltip">
-            Breve descrição do projeto. Aqui vamos apresentar
-            rapidamente o problema a abordado e a ténica utilizada.
+        <div class = "project-card">
+            <span class = "tag tag-destaque">Credit Risk</span>
+
+            <p class="project-tags">Classificação • Bancário • Machine Learning</p>
+
+            <p>
+            Projeto de Machine Learning voltado à previsão de inadimplência no contexto de risco de crédito.
+            A solução utiliza dados financeiros, demográficos e comportamentais para identificar clientes com
+            maior probabilidade de default, passando por análise exploratória, engenharia de variáveis,
+            tratamento do desbalanceamento e comparação de diferentes modelos preditivos.
+            </p>
+
         </div>
+
+        <figure class ="project-chart">
+            <img src="data:image/png;base64,{grafico}" alt = "Comparação entre modelos testados">
+        </figure>
+
     </div>
+    <div class="project-selector-container"> {cards} </div>
 
-    <div class="project-selector">
-        <span>PROJECT 2</span>
+</section>
 
-        <div class="project-tooltip">
-            Descrição breve do segundo projeto.
-        </div>
-    </div>
-
-    <div class="project-selector">
-        <span>PROJECT 3</span>
-
-        <div class="project-tooltip">
-            Descrição breve do terceiro projeto.
-        </div>
-    </div>
-
-    <div class="project-selector">
-        <span>PROJECT 4</span>
-
-        <div class="project-tooltip">
-            Descrição breve do quarto projeto.
-        </div>
-    </div>
-
-    <div class="project-selector">
-        <span>PROJECT 5</span>
-
-        <div class="project-tooltip">
-            Descrição breve do quinto projeto.
-        </div>
-    </div>
-
-</div>
-    """
+"""
 )
-
-# AQUI FICA O BOTÃO QUE SERÁ UTILIZADO PARA LEVAR A GUIA DE PROJETOS
-st.write("Explore outros projetos →")
-
-
-
-
-
-
+# --------------------------------------------------------------------
 
 # --------------------------------------------------------------------
 # SEÇÃO DA FOOTER DA PAGINA
