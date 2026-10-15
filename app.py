@@ -12,97 +12,98 @@ st.html("""
 )
 # --------------------------------------------------------------------
 
-
-# --------------------------------------------------------------------
 # SEÇÃO HERO
+st.html("""
+<div class="hero">
 
-#  DIVIDINDO A TELA EM 2 COLUNAS
-col1, col2 = st.columns([2,1])
+    <div class="hero-content">
 
-# PREENCHENDO A COLUNA 1
-with col1:
-    # TITULOS
-    st.title("CIÊNCIA DE DADOS")
-    
-    # LEGENDAS
-    st.write("Machine learning • Data Analysis • Statis")
-    st.write("Projetos de Ciência de Dados voltados à análise, ""modelagem e compreensão de problemas do setor financeiro.")
+        <h1>CIÊNCIA DE DADOS</h1>
 
-    # CRIANDO OS BOTÕES E DEFININDO AS POSIÇÕES COM COLUNAS
-    botao1, botao2, botao3= st.columns([1,1,5])
-    # TEXTO DO BOTÃO 1
-    with botao1:
-        st.button("Explorar projetos")
+        <p>
+            Machine Learning • Análise de Dados • Previsões
+        </p>
+
         
-    # TEXTO DO BOTÃO 2
-    with botao2:
-        st.button("Github")
+        <a
+            class="hero-explorar"
+        >
+            Explorar Projetos  
+        </a>
 
-# COLUNA 2 DA PAGINA
-with col2:
-    st.html("""
-        <svg width="200" height="200">
-            <circle
-                cx="100"
-                cy="100"
-                r="30"
-                fill="#149685"
-            />
-        </svg>
-    """)
+        
+        <a
+            href="https://github.com/Rd-Brito13"
+            target="_blank"
+            class="hero-github"
+        >
+            GitHub 
+        </a>
 
 
-st.divider()
+    </div>
+    <div class="hero-bottom-explorar">
+
+    <div class="hero-bottom">
+    </div>
+
+</div>
+""")
+
 # --------------------------------------------------------------------
 
-
-
-
-# --------------------------------------------------------------------
-# SEÇÃO ABOUT THE PORTIFOLIO
-
-# TITULO DA SEÇÃO
-st.header("Sobre o Portifolio")
-
-# LEGENDA DA SEÇÃO
-st.write("Este portifólio reúne projetos desenvolvidos para explorar " "diferentes problemas de Data Science, desde classificação" " " \
-"e previsão até segmentação de cleintes e análise de séries ""temporais.")
-
-st.divider()
-# --------------------------------------------------------------------
 
 
 
 # --------------------------------------------------------------------
-# SEÇÃO OQ EU CONSTRUO
+# SEÇÃO VISÃO GERAL
+st.html("""
+<div class="visao-geral">
 
-# TITULO DA SEÇÃO
-st.header("O que eu construo")
+    <div class="visao-content">
 
-# DIVIDINDO EM 3 COLUNAS PARA OS CARDS
-col3, col4, col5 = st.columns(3)
+        <h2>Visão Geral</h2>
 
-# CARD PARA CLASSIFICAÇÃO
-with col3:
-    st.subheader("Classificação")
-    st.write("Aprendizado supervisionado")
-    st.write("Credit Risk, Churn and Prediction")
-
-# CARD PARA AGRUPAMENTO
-with col4:
-    st.subheader("Segmentação")
-    st.write("Aprendizado não supervisionado")
-    st.write("Customer and Banking segmentation")
-
-# CARD PARA SÉRIES TEMPORAIS
-with col5:
-    st.subheader("Previsão")
-    st.write("Séries Temporais")
-    st.write("Forecasting and Temporal Analysis")
-
-
-st.divider()
+        <p>
+            Este é um portfólio interativo com projetos de Ciência de Dados desenvolvidos do início ao fim, da coleta dos dados ao modelo em funcionamento. 
+            Aqui você encontra análises exploratórias e visualizações que revelam padrões e insights, modelos de Machine Learning de classificação, regressão e agrupamento avaliados com métricas claras, e soluções preditivas aplicadas a cenários reais. 
+            Além de conhecer o raciocínio por trás de cada projeto, você pode colocar os modelos à prova, basta clicar no botão "Explorar Projetos" disponível no inicio da pagina.
+        </p>
+    </div>
+</div>
+""")
 # --------------------------------------------------------------------
+
+
+
+# --------------------------------------------------------------------
+# SEÇÃO TIPOS DE PROJETOS
+st.html("""
+<section class="tipos-projetos">
+    <h2>Tipos de Projetos</h2>
+    <div class="cards">
+        
+        <div class = "card">
+        <span class="tag">Aprendizado Supervisionado</span>
+        <h3>Classificação</h3>
+        <p>Risco de crédito, churn e previsão de comportamento</p>
+        </div>
+
+        <div class="card">
+        <span class="tag">Aprendizado não Supervisionado</span>
+        <h3>Segmentação</h3>
+        <p>Segmentação de clientes e de perfis bancários</p>
+        </div>
+
+        <div class = "card">
+        <span class="tag">Séries temporais</span>
+        <h3>Previsão</h3>
+        <p>Forecasting e análise de padrões ao longo do tempo</p>
+        </div>
+    </div>
+</section>
+""")
+#--------------------------------------------------------
 
 
 
@@ -123,7 +124,7 @@ with col6:
         <h3>CREDIT RISK</h3>
 
         <p class="project-tags">
-            Classification • Banking • Machine Learning
+            Classificação • Bancário • Machine Learning
         </p>
 
         <p>
@@ -198,8 +199,6 @@ st.html(
 st.write("Explore outros projetos →")
 
 
-st.divider()
-# --------------------------------------------------------------------
 
 
 
@@ -215,7 +214,7 @@ st.html("""
         <h3>PORTFÓLIO DE CIÊNCIA DE DADOS</h3>
 
         <p>
-            Machine Learning • Data Analysis • Forecasting
+            Machine Learning • Análise de Dados • Previsões
         </p>
 
         <a

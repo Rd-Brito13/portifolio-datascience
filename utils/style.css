@@ -1,23 +1,172 @@
 
+ /* ESTILIZAÇÕES SEÇÃO HERO */ 
+
+ /*RESPONSÁVEL POR FORMATAR O POSICIONAMENTO DOS ELEMENTOS NA SEÇÃO HERO*/
+    .hero {
+    text-align: center;
+    }
+
+
+/*FORMATA SOMENTE O TEXTO DO ELEMENTO H1 NA SEÇÃO HERO*/
+    .hero-content h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 500;
+    color: #149685;
+    }
+
+/*FORMATA SOMENTE O ELEMENTO p(paragrafo) NAS BADGES DA SEÇÃO HERO*/
+    .hero-content p {
+    margin-top: 10px;
+    font-size: 18px;
+    }
+
+/*RESPONSÁVEL PELA FORMATAÇÃO DO TEXTO DENTRO DO BOTÃO GITHUB DENTRO DA SEÇÃO HERO*/
+    .hero-github {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: white;
+    text-decoration: none;
+    background-color: #149685;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 9px 18px;
+
+    border: 1px solid #149685;
+    border-radius: 8px;
     
-    /* CARD DO PROJETO */
+
+    transition: all 0.2s ease;
+    }
+
+/*APLICA O HOVER NA CLASSE DO BOTÃO GITHUB NA SEÇÃO HERO*/
+    .hero-github:hover {
+    background-color:#f2e8b8;
+    transform: translateY(-2px);
+    }
+
+/*CRIA A BORDA NA MARGIN INFERIOR UTILIZADA PARA DIVIR AS SEÇÕES E FAZ A FORMATAÇÃO DE MARGIN E PADDING NO BOTÃO*/
+    .hero-bottom {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #222;
+    font-size: 14px;
+    color: #777;
+    }
+
+/*FORMATA O TEXTO DA SEÇÃO HERO NO BOTÃO EXPLORAR*/
+    .hero-explorar {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 20px;
+
+    color: white;
+    text-decoration: none;
+    background-color: #149685;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 9px 18px;
+
+    border: 1px solid #149685;
+    border-radius: 8px;
+
+    transition: all 0.2s ease;
+    }
+
+/* FORMATAÇÃO DO HOOVER PARA O BOTÃO EXPLORAR*/
+    .hero-explorar:hover {
+    background-color:#f2e8b8;
+    color: white;
+    transform: translateY(-2px);
+    }
+
+/*FAZ A FORMATAÇÃO DE MARGIN E PADDING NO BOTÃO*/
+    .hero-bottom-explorar {
+    margin-top: 10px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #777;
+    }
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+/*ESTILIZAÇÕES NA SEÇÃO VISÃO GERAL*/
+
+/*FORMATA O H2 TITULO DA SEÇÃO*/
+.visao-content h2 {
+    margin: 0;
+    font-size: 34px;
+    color: #149685;
+    font-weight: 500;
+}
+
+/*FORMATA O PARAGRAFO ONDE FICA A CONTEXTUALIZAÇÃO DA SEÇÃO*/
+.visao-content p {
+    margin-top: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 40px;
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/*ESTILIZAÇÕES NA SEÇÃO TIPOS DE PROJETOS */
+.tipos-projetos h2 { color: #1a9682; font-size: 34px;font-weight: 500; margin: 0;}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  border-bottom: 1px solid #222;
+  padding-bottom: 40px;
+}
+.card {
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color .2s, transform .2s;
+  margin-top: 3px;
+}
+.card:hover { border-color: #1a9682; transform: translateY(-3px); background-color: #f2e8b8;}
+.card h3 { margin: .75rem 0 .5rem; }
+.card p { color: #555; margin: 0;}
+.tag {
+  background: #e6f4f1; color: #1a9682;
+  font-size: .8.5rem; font-weight: 600;
+  padding: .25rem .7rem; border-radius: 999px;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* ESTILIZAÇÕES NA SEÇÃO PROJECT*/
+
+/* CARD DO PROJETO */
     .project-card {
         padding: 30px;
         border-radius: 15px;
         border: 1px solid #333;
-        background-color: #149685;
+        background-color: white;
         margin-bottom: 10px;
         transition: all 0.2 ease;
     }
 
-    /* CARD DO PROJETO SOMENTE O H3 DENTRO DA DIV*/
+/* CARD DO PROJETO SOMENTE O H3 DENTRO DA DIV*/
     .project-card h3{
     color: black;
     font-size: 28px;
-    margin-bottom: 10px;
+    margin: 10;
     }
 
-    /* CARD DO PROJETO SOMENTE O P (PARAGRAFO) DENTRO DA DIV */
+/* CARD DO PROJETO SOMENTE O P (PARAGRAFO) DENTRO DA DIV */
     .project-card p{
     line-height: 1;
     }
@@ -27,7 +176,7 @@
     margin-top: 20px;
     }
 
-    /* APLICANDO MODIFICAÇÕES AO CARD DO PROJETO INTEIRO E AO PARAGRAFO PROJECT-TAGS*/
+/* APLICANDO MODIFICAÇÕES AO CARD DO PROJETO INTEIRO E AO PARAGRAFO PROJECT-TAGS*/
     .project-card .project-tags {
     font-size: 14px;
     margin-bottom: 20px;
@@ -40,38 +189,24 @@
         height: 100%;
         }
 
-    /* APLICANDO FORMATAÇÕES EM TODOS OS BOTÕES */
-    .stButton > button {
-        background-color: white;
-        color: #149685;
-        border: none;
-        border-radius: 8px;
-        padding: 10px 20px;
-        font-weight: 600;
-        }
 
-    /* CRIANDO UM EFEITO HOVER PARA TODOS OS BOTÕES */
-    .stButton > button:hover {
-        background-color: #149685;
-        color: white;
-        border: 1px solid white;    
-    }
-
-    /* APLICANDO O EFEITO HOVER NO CARD DO PROJETO PRINCIPAL*/
+/* APLICANDO O EFEITO HOVER NO CARD DO PROJETO PRINCIPAL*/
     .project-card:hover{
     background-color: #f2e8b8;
     transform: translateY(-3px);
+    border-color: #1a9682;
     }
 
     
-    /*  AQUI É A CONFIGURAÇÃO  DOS CONTAINER */
+/*  AQUI É A CONFIGURAÇÃO  DOS CONTAINER */
     .project-selector-container {
     display: flex;
     gap: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
     }
-    /* AQUI É A CONFIGURAÇÃO DOS QUADRADOS ONDE FICARA OS PROJETOS */
+
+/* AQUI É A CONFIGURAÇÃO DOS QUADRADOS ONDE FICARA OS PROJETOS */
     .project-selector {
     flex: 1;
     min-height: 100px;
@@ -79,26 +214,27 @@
     padding:  20px;
     border: 1px solid #333;
     border-radius: 10px;
-    background-color: #149685;
+    background-color: white;
     color: "white";
     cursor: pointer;
     transition: all 0.2 ease;
     }
 
-    /* APLICA O EFEITO HOOVER NO CONTAINER */
+/* APLICA O EFEITO HOOVER NO CONTAINER */
     .project-selector:hover {
     background-color: #f2e8b8;
     transform: translateY(-3px);
     z-index: 1000;
+    border-color: #1a9682;
     }
 
-    /* APLICA O EFEITO TOOLTOP SOMENTE POR APARECER */
+/* APLICA O EFEITO TOOLTOP SOMENTE POR APARECER */
     .project-selector:hover .project-tooltip {
     opacity: 1;
     visibility: visible;
     }
 
-    /* CONFIGURAÇÃO DO TOOLTIP */
+/* CONFIGURAÇÃO DO TOOLTIP */
     .project-tooltip {
     position: absolute;
 
@@ -130,36 +266,39 @@
 
     z-index: 9999;
     }
-    
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
 
-    /* FORMATAÇÕES DO FOOTER*/
+
+
+
+/* ESTILIZAÇÕES NA SEÇÃO FOOTER*/
+
+/* FORMATAÇÕES DO FOOTER*/
 
     .footer {
     margin-top: 70px;
     padding: 45px 0 20px;
-
     border-top: 1px solid #333;
-
     text-align: center;
     }
-    /* FORMATA O H3 DO FOOTER */
+
+
+/* FORMATA O H3 DO FOOTER */
     .footer-content h3 {
     margin: 0;
-
     font-size: 22px;
     font-weight: 600;
-
     color: #149685;
     }
-    /* FORMATA O PARAGRAFO DA DESEÇÃO FOOTER*/
+
+
+/* FORMATA O PARAGRAFO DA SEÇÃO FOOTER*/
     .footer-content p {
     margin-top: 10px;
-
     font-size: 14px;
-    color: #aaa;
     }
 
-    /*FORMATA O TEXTO DA SEÇÃO FOOTER NO GITHUB*/
+/*FORMATA O TEXTO DA SEÇÃO FOOTER NO BOTÃO GITHUB*/
     .footer-github {
     display: inline-block;
 
@@ -179,21 +318,22 @@
 
     transition: all 0.2s ease;
     }
-    /* FORMATAÇÃO DO HOOVER PARA O BOTÃO*/
+
+
+/* FORMATAÇÃO DO HOOVER PARA O BOTÃO*/
     .footer-github:hover {
     background-color:#f2e8b8;
     color: white;
-
     transform: translateY(-2px);
     }
 
-    /*FORMATA O BOTÃO DO GITHUB */
+
+/*FORMATA O BOTÃO DO GITHUB SEÇÃO FOOTER */
     .footer-bottom {
     margin-top: 35px;
     padding-top: 15px;
-
     border-top: 1px solid #222;
-
     font-size: 12px;
     color: #777;
     }
+
