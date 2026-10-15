@@ -1,6 +1,6 @@
 import streamlit as st
 
-
+# --------------------------------------------------------------------
 # CONFIGURAÇÃO DA PAGINA
 st.set_page_config(page_title = "Data Science Portfolio", page_icon = "📊", layout = "wide")
 
@@ -10,8 +10,12 @@ st.html("""
     </style>
 """
 )
+# --------------------------------------------------------------------
 
+
+# --------------------------------------------------------------------
 # SEÇÃO HERO
+
 #  DIVIDINDO A TELA EM 2 COLUNAS
 col1, col2 = st.columns([2,1])
 
@@ -47,10 +51,15 @@ with col2:
         </svg>
     """)
 
-# DIVIDINDO A SEÇÃO HERO
-st.divider()
 
-# ABOUT THE PORTFOLIO
+st.divider()
+# --------------------------------------------------------------------
+
+
+
+
+# --------------------------------------------------------------------
+# SEÇÃO ABOUT THE PORTIFOLIO
 
 # TITULO DA SEÇÃO
 st.header("Sobre o Portifolio")
@@ -59,8 +68,13 @@ st.header("Sobre o Portifolio")
 st.write("Este portifólio reúne projetos desenvolvidos para explorar " "diferentes problemas de Data Science, desde classificação" " " \
 "e previsão até segmentação de cleintes e análise de séries ""temporais.")
 
-# DIVIDINDO A SEÇÃO ABOUT
 st.divider()
+# --------------------------------------------------------------------
+
+
+
+# --------------------------------------------------------------------
+# SEÇÃO OQ EU CONSTRUO
 
 # TITULO DA SEÇÃO
 st.header("O que eu construo")
@@ -87,216 +101,17 @@ with col5:
     st.write("Forecasting and Temporal Analysis")
 
 
-# DIVIDINO A SEÇÃO OQ EU CONSTRUO
 st.divider()
+# --------------------------------------------------------------------
 
-# TITULO DA SEÇÃO
+
+
+
+
+# --------------------------------------------------------
+# SEÇÃO PROJETOS EM DESTAQUE
 st.header("Projetos em Destaque")
-
-st.markdown(
-    """
-    <style>
-    
-    /* CARD DO PROJETO */
-    .project-card {
-        padding: 30px;
-        border-radius: 15px;
-        border: 1px solid #333;
-        background-color: #149685;
-        margin-bottom: 10px;
-        transition: all 0.2 ease;
-    }
-
-    /* CARD DO PROJETO SOMENTE O H3 DENTRO DA DIV*/
-    .project-card h3{
-    color: black;
-    font-size: 28px;
-    margin-bottom: 10px;
-    }
-
-    /* CARD DO PROJETO SOMENTE O P (PARAGRAFO) DENTRO DA DIV */
-    .project-card p{
-    line-height: 1;
-    }
-
-    .project-tech{
-    font-size: 13px;
-    mergin-top: 20px;
-    }
-
-    /* APLICANDO MODIFICAÇÕES AO CARD DO PROJETO INTEIRO E AO PARAGRAFO PROJECT-TAGS*/
-    .project-card .project-tags {
-    font-size: 14px;
-    margin-bottom: 20px;
-    }
-
-    .project-visual {
-        padding: 30px;
-        border-radius: 15px;
-        background-color: #149685;
-        height: 100%;
-        }
-
-    /* APLICANDO FORMATAÇÕES EM TODOS OS BOTÕES */
-    .stButton > button {
-        background-color: white;
-        color: #149685;
-        border: none;
-        border-radius: 8px;
-        padding: 10px 20px;
-        font-weight: 600;
-        }
-
-    /* CRIANDO UM EFEITO HOVER PARA TODOS OS BOTÕES */
-    .stButton > button:hover {
-        background-color: #149685;
-        color: white;
-        border: 1px solid white;    
-    }
-
-    /* APLICANDO O EFEITO HOVER NO CARD DO PROJETO PRINCIPAL*/
-    .project-card:hover{
-    background-color: #f2e8b8;
-    transform: translateY(-3px);
-    }
-
-    
-    /*  AQUI É A CONFIGURAÇÃO  DOS CONTAINER */
-    .project-selector-container {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    }
-    /* AQUI É A CONFIGURAÇÃO DOS QUADRADOS ONDE FICARA OS PROJETOS */
-    .project-selector {
-    flex: 1;
-    min-height: 100px;
-    position: relative;
-    padding:  20px;
-    border: 1px solid #333;
-    border-radius: 10px;
-    background-color: #149685;
-    color: "white";
-    cursor: pointer;
-    transition: all 0.2 ease;
-    }
-
-    /* APLICA O EFEITO HOOVER NO CONTAINER */
-    .project-selector:hover {
-    background-color: #f2e8b8;
-    transform: translateY(-3px);
-    z-index: 1000;
-    }
-
-    /* APLICA O EFEITO TOOLTOP SOMENTE POR APARECER */
-    .project-selector:hover .project-tooltip {
-    opacity: 1;
-    visibility: visible;
-    }
-
-    /* CONFIGURAÇÃO DO TOOLTIP */
-    .project-tooltip {
-    position: absolute;
-
-    top: 100%;
-    left: 50%;
-
-    width: 240px;
-    padding: 15px 18px;
-
-    margin-top: 20px;
-
-    transform: translateX(-50%);
-
-    border-radius: 10px;
-
-    background-color: #f5f5f5;
-    border: 2px solid #149685;
-
-    color: black;
-    font-size: 13px;
-    line-height: 1.5;
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: opacity 0.2s ease;
-
-    z-index: 9999;
-    }
-    
-
-    /* FORMATAÇÕES DO FOOTER*/
-
-    .footer {
-    margin-top: 70px;
-    padding: 45px 0 20px;
-
-    border-top: 1px solid #333;
-
-    text-align: center;
-    }
-    /* FORMATA O H3 DO FOOTER */
-    .footer-content h3 {
-    margin: 0;
-
-    font-size: 22px;
-    font-weight: 600;
-
-    color: #149685;
-    }
-    /* FORMATA O PARAGRAFO DA DESEÇÃO FOOTER*/
-    .footer-content p {
-    margin-top: 10px;
-
-    font-size: 14px;
-    color: #aaa;
-    }
-
-    /*FORMATA O TEXTO DA SEÇÃO FOOTER NO GITHUB*/
-    .footer-github {
-    display: inline-block;
-
-    margin-top: 20px;
-
-    color: white;
-    text-decoration: none;
-    background-color: #149685;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    padding: 9px 18px;
-
-    border: 1px solid #149685;
-    border-radius: 8px;
-
-    transition: all 0.2s ease;
-    }
-    /* FORMATAÇÃO DO HOOVER PARA O BOTÃO*/
-    .footer-github:hover {
-    background-color:#f2e8b8;
-    color: white;
-
-    transform: translateY(-2px);
-    }
-
-    /*FORMATA O BOTÃO DO GITHUB */
-    .footer-bottom {
-    margin-top: 35px;
-    padding-top: 15px;
-
-    border-top: 1px solid #222;
-
-    font-size: 12px;
-    color: #777;
-    }
-    """,
-    unsafe_allow_html=True
-)
+ 
 
 # CRIANDO AS COLUNAS PARA A DESCRIÇÃO DO CARD DO PROJETO E A IMAGEM UTILIZADA
 col6, col7 = st.columns([2,1])
@@ -330,7 +145,7 @@ with col7:
     )
 
 
-# RESPONSAVEL POR CRIAR O CONTEINER, A DIV ONDE FICA O SPAN COM O TESTO DENTRO DO CONTAINER E A DESCRIÇÃO DO TOOLTIP
+# RESPONSAVEL POR CRIAR O CONTEINER, A DIV ONDE FICA O SPAN COM O TEXTO DENTRO DO CONTAINER E A DESCRIÇÃO DO TOOLTIP
 st.html(
     """
 <div class = "project-selector-container">
@@ -382,10 +197,16 @@ st.html(
 # AQUI FICA O BOTÃO QUE SERÁ UTILIZADO PARA LEVAR A GUIA DE PROJETOS
 st.write("Explore outros projetos →")
 
-# DIVIDINDO A PAGINA PRINCIPAIS PROJETOS
-st.divider()
 
-# AQUI FICA A SEÇÃO DA FOOTER DA PAGINA
+st.divider()
+# --------------------------------------------------------------------
+
+
+
+
+
+# --------------------------------------------------------------------
+# SEÇÃO DA FOOTER DA PAGINA
 st.html("""
 <div class="footer">
 
@@ -413,4 +234,19 @@ st.html("""
 
 </div>
 """)
+# --------------------------------------------------------------------
 
+
+
+
+# --------------------------------------------------------------------
+# ESSA FUNÇÃO É A RESPOSÁVEL POR CARREGAR E ESTIILIZAR OS ELEMENTOS DA PÁGINA.
+
+def carregar_estilos(caminho_css):
+    """Lê o arquivo CSS externo e o injeta na aplicação"""
+    with open(caminho_css, "r", encoding = "utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
+
+carregar_estilos("utils\style.css")
+
+# --------------------------------------------------------------------
