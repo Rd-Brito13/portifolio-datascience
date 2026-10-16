@@ -267,6 +267,42 @@
 }
 .project-selector:hover .project-tooltip { opacity: 1; visibility: visible; }
 
+/*FORMATA O TEXTO DA SEÇÃO PROJETOS EM DESTAQUE PARA O BOTÃO EXPLORAR PROJETOS*/
+ .project-explorar {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 20px;
+
+    color: white;
+    text-decoration: none;
+    background-color: #149685;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 9px 18px;
+
+    border: 1px solid #149685;
+    border-radius: 8px;
+
+    transition: all 0.2s ease;
+    }
+
+/* FORMATAÇÃO DO HOOVER PARA O BOTÃO EXPLORAR PROJETOS NA SEÇÃO PROJETOS EM DESTAE*/
+  .project-explorar:hover {
+    background-color:#f2e8b8;
+    color: white;
+    transform: translateY(-2px);
+    }
+
+/*FAZ A FORMATAÇÃO DE MARGIN E PADDING NO BOTÃO EXPLORAR PROJETOS NA  SEÇÃO PROJETOS EM DESTAQUE*/
+  .project-bottom-explorar {
+    margin-top: 5px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #777;
+    }
+
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -340,5 +376,42 @@
 
 
 
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+/*ESTILIZAÇÕES NA PAGINA DE PROJETOS*/
 
+/* PÁGINA DE PROJETOS */
+.voltar { color: #1a9682; text-decoration: none; font-size: .9rem; }
 
+.lab-intro h2 { color: #149685; font-size: 34px; font-weight: 500; margin: 1rem 0; }
+.lab-intro .tag-destaque { display: inline-block; margin: 1rem 0 .75rem; }
+.lab-orientacao { font-style: italic; color: #555; }
+
+.lista-titulo { font-weight: 700; font-size: 1.1rem; margin-bottom: .5rem; }
+
+.st-key-lista-projetos button {
+  justify-content: flex-start;
+  border: 1px solid #222;
+  border-radius: 8px;
+  background: transparent;
+  color: #222;
+  transition: border-color .2s, background-color .2s;
+}
+.st-key-lista-projetos button:hover { border-color: #1a9682; background: #f2e8b8; color: #222; }
+.st-key-lista-projetos button[kind="primary"] {
+  background: #e6f4f1;
+  border-color: #1a9682;
+  color: #1a9682;
+  font-weight: 700;
+}
+.st-key-lista-projetos button:disabled { opacity: .5; }
+
+.resultado,
+.resultado-vazio {
+  border: 1px dashed #bbb;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #777;
+}
+.resultado { border-style: solid; border-color: #1a9682; color: #222; }
