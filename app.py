@@ -16,8 +16,8 @@ def carregar_estilos(caminho_css):
 
 carregar_estilos("utils/style.css")
 
-# --------------------------------------------------------------------
 
+# AQUI É FEITO A ATRIBUIÇÃO DAS PAGINAS AS VARIAVEIS, UTILIZADAS PARA ACOMODAR A HOME E A PAGINA DE PROJETOS
 home = st.Page("paginas/home.py", title="Início", default=True)
 projetos = st.Page("paginas/projetos.py", title="Projetos", url_path="projetos")
 

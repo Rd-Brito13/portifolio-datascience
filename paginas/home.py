@@ -46,8 +46,6 @@ st.html("""
 
 
 
-
-# --------------------------------------------------------------------
 # SEÇÃO VISÃO GERAL
 st.html("""
 <div class="visao-geral">
@@ -68,7 +66,7 @@ st.html("""
 
 
 
-# --------------------------------------------------------------------
+
 # SEÇÃO TIPOS DE PROJETOS
 st.html("""
 <section class="tipos-projetos">
@@ -99,17 +97,19 @@ st.html("""
 
 
 
-
-
-# --------------------------------------------------------
 # SEÇÃO PROJETOS EM DESTAQUE
+
+# FAZ COM QUE A IMAGEM SEJA CARREGADA SOMENTE 1 VEZ, AJUDA NO DESEMPENHO
 @st.cache_data
+
+# FUNÇÃO PARA IMPORTAÇÃO DA IMAGEN
 def img_base64(caminho):
     return base64.b64encode(Path(caminho).read_bytes()).decode()
 
-
+# CAPTURA O CAMINHO DO GRÁFICO JUNTO A FUNÇÃO
 grafico = img_base64("assets/credit-risk/compracao_modelos.png")
 
+# RESPONAVEL POR COLETAR OS DADOS QUE FICARÃO NOS CARDS
 projetos = [
     {"nome": "PROJETO 2", "badges":["Regressão","Varejo"],"descricao": "Breve descrição do problema abordado e da técnica utilizada."},
     {"nome":"PROJETO 3","badges":["Regressão","Varejo"],"descricao":"Descrição Breve do segundo projeto."},
@@ -118,6 +118,7 @@ projetos = [
     {"nome": "PROJETO 6", "badges":["Regressão","Varejo"],"descricao": "Descrição breve do quinto projeto."}
 ]
 
+# MONTAR OS CARDS NA SEÇÃO PROJETOS EM DESTAQUE
 def montar_card(p):
     badges = " • ".join(p["badges"])
     return f"""
@@ -128,8 +129,10 @@ def montar_card(p):
     </div>
     """
 
+# MONTA OS CARDS
 cards = "".join(montar_card(p) for p in projetos)
 
+# HMTL DA SEÇÃO, ESTRUTURA E CRIA AS CLASSES PARA SEREM FORMATADAS PELO CSS
 st.html(
 f"""
 <section class = "secao-destaque">

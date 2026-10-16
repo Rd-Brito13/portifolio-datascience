@@ -2,10 +2,11 @@ import streamlit as st
 import joblib
 
 
-# 
+# aplica a função para carregar o modelo dentro do streamlit
 @st.cache_resource
 def carregar_modelo(caminho):
     return joblib.load(caminho)
+
 # -------------------------------------------------------------------
 # DADOS DOS PROJETOS
 PROJETOS = {
